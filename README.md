@@ -12,7 +12,7 @@ user3  最新
 user3加入
 
 
-user1 又新加入
-user2 又新加入
+user1 又新加入   
+user2 又新加入   又改变
 
 >>>>>>> e8686211a2fb9adbe92b1206b627862ce5b61b34
