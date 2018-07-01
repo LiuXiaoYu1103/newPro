@@ -1,0 +1,81 @@
+1.配置用户名，邮箱
+  git config --global user.name/user.email
+
+2.初始化仓库
+  git init
+
+3.查看文件状态
+  git status
+
+4.添加文件到暂存区
+  git add */-A
+
+5.提交文件到仓库当中
+  git commit -m"备注信息"
+
+6.查看所有版本信息
+  git log
+  每一次提交都会对应一个sha:589738e18edf818142854a50c3efe82c5cf34a1b 
+  该 版本是谁提交，提交日期。
+
+学习git
+/////////////////////////////////////////////
+mkdir some 创建文件夹
+cd some  进入文件夹
+pwd 查看所在目录
+①  git init  some  把some目录变为git可以管理的仓库
+②  git add readme.txt   把readme.txt添加到仓库暂存区   git add -A 添加多个文件
+③  git commit -m “注释说明”  把readme.txt把暂存区的文件添加到当前分支
+git log 查看所有提交版本修改
+git log --pretty=oneline  查看所有版本修改  一行介绍 
+git reset —-hard commit_id   回退到commit_id 版本库
+git reflog  查看所有版本命令历史
+git checkout —- readme.txt 其实本质是把版本库的文件 替换了 工作区的文件   总之，就是让这个文件回到最近一次git commit或git add时的状态。
+
+git status 查看工作取中修改的文件状态
+一、未git add 的修改 放弃工作区的修改到最初  ①git checkout —- readme.txt 丢弃对工作区文件的修改
+二、git add 后修改的 放弃暂存区的修改到工作区的修改 ①git reset HEAD readme.txt 把暂存区的文件撤销到工作区
+   放弃工作区的修改到最初                      ②git checkout —- readme.txt 丢弃对工作区文件的修改
+三、git commit 后的修改直接 git reset —hard commit_id 
+
+四、①git rm test.txt ② git commit -m “删除版本库中test.txt”  如工作区删除了test.txt文件但是版本库未删除 用两部删除版本库中的文件与工作区一直
+五、若工作区误删版本库中仍然保存有test.txt文件 恢复工作区test.txt 文件用 git checkout — text.txt 把工作区与版本库一直
+
+
+
+///////////结合github与远程仓库关联
+git branch -a  查看远程所有分支
+用checkout命令把远程分支取到本地，并自动建立tracking
+git checkout -b localBranch origin/branchName # 推荐使用者这种
+git remote   //  git remote -v   查看远程分支的地址
+
+# 不能单独git checkout -b localBranch 这是在本地创建一个分支，而不是获取远程分支
+① 关联本地与远程仓库git remote add origin git@github.com:michaelliao/learngit.git
+②  第一次把本地仓库推到远程仓库 git push -u origin master
+工作中用到  
+①git clone 远程仓库name   复制远程仓库到本地
+
+②git branch -a  查看远程所有分支
+
+③git checkout -b localBranch origin/branchName # 推荐使用者这种创建分支  不能单独git checkout -b localBranch 这是在本地创建一个分支，而不是获取远程分支
+④ git branch  查看所有分支
+⑤ git checkout master 	切换到master分支下
+⑥ git pull 更新本地 
+⑦ git merge dev 将dev分支的更改合并到当前分支中    git merge --no-ff -m "merge with no-ff" dev   如果要强制禁用Fast forward模式
+⑧git push 推代码
+⑨git branch -d ‘dev’ 删除dev分支 
+
+
+
+
+git branch -D <name>强行删除一个未合并的分支
+git branch -vv  查看本地分支对应的远程分支
+②git branch -a  查看远程所有分支
+
+
+
+
+
+
+ 
+ 
