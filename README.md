@@ -9,6 +9,6 @@ user2 添加内容
 user3加入
 
 
-user1 又新加入
-user2 又新加入
+user1 又新加入   
+user2 又新加入   又改变
 
